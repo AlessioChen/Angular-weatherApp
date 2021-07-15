@@ -5,7 +5,9 @@
         </app-home-list>
     </mat-drawer>
     <!-- Right col -->
-    <mat-drawer>
-        <div>map</div>
-    </mat-drawer>
+    <mat-drawer-content>
+        <!-- Map -->
+        <app-home-map [cities]="homeService.cities$ |async" [currentCity]="homeService.currentCity$|async">
+        </app-home-map>
+    </mat-drawer-content>
 </mat-drawer-container>

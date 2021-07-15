@@ -13,14 +13,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { SearchPipe } from 'src/app/components/home/pipes/search.pipe';
 import { SortPipe } from 'src/app/components/home/pipes/sort.pipe';
+import { HomeMapComponent } from './home-map/home-map.component';
 
 
 @NgModule({
   declarations: [
     HomeContainerComponent,
-    HomeListComponent, 
-    SearchPipe, 
+    HomeListComponent,
+    SearchPipe,
     SortPipe, 
+    HomeMapComponent,
   ],
   imports: [
     CommonModule,

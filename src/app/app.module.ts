@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeModule } from './components/home/home.module';
-import { SortPipe } from './components/home/pipes/sort.pipe';
 
 
 
