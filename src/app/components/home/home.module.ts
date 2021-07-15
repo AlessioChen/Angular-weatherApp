@@ -11,14 +11,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import { SearchPipe } from 'src/app/pipes/search.pipe';
+import { SearchPipe } from 'src/app/components/home/pipes/search.pipe';
+import { SortPipe } from 'src/app/components/home/pipes/sort.pipe';
 
 
 @NgModule({
   declarations: [
     HomeContainerComponent,
     HomeListComponent, 
-    SearchPipe
+    SearchPipe, 
+    SortPipe, 
   ],
   imports: [
     CommonModule,

@@ -14,7 +14,7 @@
             <mat-icon mat-list-icon>map</mat-icon>
             <div mat-line>View all</div>
         </mat-list-item>
-        <ng-container *ngFor="let item of items | search: (search$ |async)  ">
+        <ng-container *ngFor="let item of items | search: (search$ |async) | sort">
             <mat-divider></mat-divider>
             <mat-list-item class="list-item" matRipple (click)="itemClick.emit(item) ">
                 <mat-icon mat-list-icon>place</mat-icon>

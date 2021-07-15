@@ -11,8 +11,10 @@ import { City } from "../models/city";
 export class HomeService {
 
     private _cities$ = new BehaviorSubject<City[] | null>([]);
+    private _currentCity$ = new BehaviorSubject<City | null>(null);
 
     cities$ = this._cities$.asObservable();
+    currentCity$ = this._currentCity$.asObservable();
 
 
     constructor() { }
@@ -22,5 +24,14 @@ export class HomeService {
     */
     getCities(): void {
         this._cities$.next(MOCK);
+    }
+
+    /**
+   * Select a city
+   * It opens a modal when a city is selected.
+   * @param city
+   */
+    setSelectedHandler(city: City | null) {
+        this._currentCity$.next(city);
     }
 }
