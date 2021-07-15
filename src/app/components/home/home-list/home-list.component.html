@@ -1,0 +1,25 @@
+<div class="list-header">
+    <h2>Cities List </h2>
+    <mat-form-field class="example-form-field">
+        <mat-label>Filter by city name</mat-label>
+        <input matInput type="text" [formControl]="input">
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="input.setValue('')">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div class="list-content">
+    <mat-list>
+        <mat-list-item class="list-item" matRipple (click)="itemClick.emit(null)">
+            <mat-icon mat-list-icon>map</mat-icon>
+            <div mat-line>View all</div>
+        </mat-list-item>
+        <ng-container *ngFor="let item of items | search: (search$ |async)  ">
+            <mat-divider></mat-divider>
+            <mat-list-item class="list-item" matRipple (click)="itemClick.emit(item) ">
+                <mat-icon mat-list-icon>place</mat-icon>
+                <div mat-line>{{item.city}}</div>
+            </mat-list-item>
+        </ng-container>
+    </mat-list>
+</div>

@@ -1,0 +1,16 @@
+.list-header {
+  // position: absolute;
+  text-align: center;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: white
+}
+
+.list-content {
+  padding-top: 10px
+}
+
+.list-item {
+  cursor: pointer;
+}

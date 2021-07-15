@@ -1,0 +1,10 @@
+<mat-drawer-container class="view">
+    <!-- Left col -->
+    <mat-drawer mode="side" opened class="side-panel">
+        <app-home-list [items]="homeService.cities$ | async"></app-home-list>
+    </mat-drawer>
+    <!-- Right col -->
+    <mat-drawer>
+        <div>map</div>
+    </mat-drawer>
+</mat-drawer-container>
