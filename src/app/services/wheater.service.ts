@@ -27,7 +27,7 @@ export class WheaterService {
     return this.httpClient.get<Wheater>(`${base_url}?key=${key}&q=${lat},${long}&aqi=no`)
   }
 
-  
+
 
 
 
