@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, Output, SimpleChanges, ViewChild, EventEmitter, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { City, MarkedCity } from 'src/app/models/city';
+import { City } from 'src/app/models/city';
 import { WheaterService } from 'src/app/services/wheater.service';
 
 
@@ -39,7 +39,6 @@ export class HomeMapComponent {
   @Input() cities: City[] | null = null;
   @Output() markerClick = new EventEmitter<City>();
   leafletMap!: L.Map;
-  markedCities: MarkedCity[] = []
 
 
   constructor(public wheaterService: WheaterService) {

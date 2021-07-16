@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { MOCK } from "../moc/moc-data";
-import { City, MarkedCity } from "../models/city";
-import { Wheater } from "../models/wheater";
+import { City } from "../models/city";
 import { WheaterService } from "./wheater.service";
 
 @Injectable({
@@ -17,9 +16,7 @@ export class HomeService {
   
 
     cities$ = this._cities$.asObservable();
-    currentCity$ = this._currentCity$.asObservable();
-
-    markedCities: MarkedCity[] = []; 
+    currentCity$ = this._currentCity$.asObservable(); 
 
 
     constructor(private wheaterService: WheaterService) { }
@@ -39,7 +36,6 @@ export class HomeService {
     setSelectedHandler(city: City | null) {
         this._currentCity$.next(city);
     }
-
 
 
 

@@ -1,5 +1,4 @@
 import * as L from 'leaflet';
-import { Wheater } from './wheater';
 export interface City {
     city: string;
     lat: number;
@@ -7,8 +6,3 @@ export interface City {
 
 }
 
-export class MarkedCity{
-    city!: City; 
-    icon!: L.Icon; 
-    wheater!: Wheater;
-}
