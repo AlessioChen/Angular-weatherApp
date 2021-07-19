@@ -14,6 +14,10 @@ import { MatListModule } from '@angular/material/list';
 import { SearchPipe } from 'src/app/components/home/pipes/search.pipe';
 import { SortPipe } from 'src/app/components/home/pipes/sort.pipe';
 import { HomeMapComponent } from './home-map/home-map.component';
+import { HomeWheatherModalComponent } from './home-weather-modal/home-wheather-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -21,8 +25,9 @@ import { HomeMapComponent } from './home-map/home-map.component';
     HomeContainerComponent,
     HomeListComponent,
     SearchPipe,
-    SortPipe, 
+    SortPipe,
     HomeMapComponent,
+    HomeWheatherModalComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +37,11 @@ import { HomeMapComponent } from './home-map/home-map.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatCardModule
+
   ],
   providers: [HomeService]
 })

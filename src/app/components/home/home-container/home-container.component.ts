@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
-import { WheaterService } from 'src/app/services/wheater.service';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-home-container',
@@ -11,8 +11,8 @@ export class HomeContainerComponent implements OnInit {
 
   constructor(
     public homeService: HomeService,
-  
-    ) { }
+
+  ) { }
 
 
   ngOnInit(): void {

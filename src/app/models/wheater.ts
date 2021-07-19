@@ -1,7 +1,16 @@
-export interface Wheater {
+export interface Weather {
+    location: Location
     current: Current
 }
 
+export interface Location {
+    name: string,
+    region: string,
+    country: string,
+    lat: number,
+    lon: number,
+    localtime: string
+}
 export interface Current {
     condition: Condition,
     last_updated_epoch: number,

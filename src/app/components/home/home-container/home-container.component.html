@@ -7,7 +7,8 @@
     <!-- Right col -->
     <mat-drawer-content>
         <!-- Map -->
-        <app-home-map [cities]="homeService.cities$ |async" [currentCity]="homeService.currentCity$|async">
+        <app-home-map [cities]="homeService.cities$ |async" [currentCity]="homeService.currentCity$|async"
+            (markerClick)="homeService.openWheaterModal($event) ">
         </app-home-map>
     </mat-drawer-content>
 </mat-drawer-container>

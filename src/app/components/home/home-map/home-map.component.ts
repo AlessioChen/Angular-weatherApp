@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, Output, SimpleChanges, ViewChild, EventEmitter, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { City } from 'src/app/models/city';
-import { WheaterService } from 'src/app/services/wheater.service';
+import { Weather } from 'src/app/models/wheater';
+import { WeatherService } from 'src/app/services/weather.service';
 
 
 const iconSize: L.PointExpression = [20, 30]
@@ -37,13 +38,11 @@ export class HomeMapComponent {
   @ViewChild('host', { static: true }) host!: ElementRef<HTMLInputElement>;
   @Input() currentCity: City | null = null;
   @Input() cities: City[] | null = null;
-  @Output() markerClick = new EventEmitter<City>();
+  @Output() markerClick = new EventEmitter<Weather>();
   leafletMap!: L.Map;
 
 
-  constructor(public wheaterService: WheaterService) {
-
-  }
+  constructor(public weatherService: WeatherService) { }
 
 
 
@@ -77,8 +76,6 @@ export class HomeMapComponent {
     this.leafletMap.attributionControl.setPrefix('Created by Alessio Chen');
     this.drawMarkers();
 
-
-
   }
 
 
@@ -103,7 +100,7 @@ export class HomeMapComponent {
   drawMarkers(): void {
 
     this.cities?.forEach((city) => {
-      this.wheaterService.fetchData(city.lat, city.lng).subscribe((data) => {
+      this.weatherService.fetchData(city.lat, city.lng).subscribe((data) => {
         let icon: L.Icon
         if (data.current.temp_c < 22) {
           icon = IconGreen;
@@ -115,10 +112,8 @@ export class HomeMapComponent {
 
         L.marker([city.lat, city.lng], { icon: icon })
           .bindTooltip(`${city.city}`)
-          .bindPopup(`${city.city} \n ${data.current.temp_c}°C`)
-          .on('click', () => {
-            this.markerClick.emit(city)
-          })
+          // .bindPopup(`${city.city} \n ${data.current.temp_c}°C`)
+          .on('click', () => { this.markerClick.emit(data) })
           .addTo(this.leafletMap);
       })
     })
