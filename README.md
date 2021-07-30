@@ -17,4 +17,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - [Angular](https://angular.io)
 - [Angular Material](https://material.angular.io)
 - [Leaflet](https://leafletjs.com)
-- [WeatherAPI](https://www.weatherapi.com)
+- [WeatherAPI](https://www.weatherapi.com/)
