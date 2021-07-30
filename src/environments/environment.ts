@@ -3,7 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
   WHEATER_API_KEY: '0f9d22108fcd4f8d84980700211607'
 };
 

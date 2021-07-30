@@ -10,7 +10,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeModule } from './components/home/home.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
