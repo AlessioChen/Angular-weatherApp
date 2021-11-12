@@ -2,7 +2,7 @@
 
 ### About the project
 Project made for Full Stack developer course, it uses [weatherapi](https://www.weatherapi.com) as api and [leatlet](https://leafletjs.com) to display a map. 
-It is build with typescript using Angular. 
+It is build with typescript using Angular and can be found a demo on [firebase](https://map-application-b44cd.web.app).
 
 ### Features
 - A map with markers on some italians cities. 
